@@ -58,10 +58,10 @@
         <div *ngIf="name.errors.required">
             name is required ! 
         </div>
-        <div *ngIf="name.errors.minlength && (name.dirty || name.touched)">
+        <div *ngIf="name.errors.minlength ">
             minimuum length should be 4
         </div>
-        <div *ngIf="name.errors.forbidden && (name.dirty || name.touched)">
+        <div *ngIf="name.errors.forbidden">
             Name can't be {{name.value}}
         </div>
     </div>

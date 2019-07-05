@@ -9,7 +9,11 @@ export class Wishservice {
     wishlistitems = [];
 
     addToWish(product) {
-        this.wishlistitems.push(product);
+        if (!this.wishlistitems.includes(product)) {
+            this.wishlistitems.push(product);
+        } else {
+            return false;
+        }
     }
 
     getwish() {
@@ -20,7 +24,7 @@ export class Wishservice {
         this.wishlistitems = [];
         return this.wishlistitems;
     }
-    RemoveFromWishlist(wishitems) {
-        this.wishlistitems.splice(wishitems, 1);
+    deleteFromWish(productId) {
+        this.wishlistitems.splice(productId, 1);
     }
 }

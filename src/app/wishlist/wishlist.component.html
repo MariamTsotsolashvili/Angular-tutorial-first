@@ -1,7 +1,10 @@
 <p>wishlist</p>
 
-<div class="wish-item" *ngFor="let wish of wishlistitems">
+<div class="cart-item" *ngFor="let wish of wishitems">
     <span>{{wish.name}}</span>
     <span>{{wish.price | currency}}</span>
-    <button (click)="RemoveFromWishlist(wishitems)">remove</button>
+    <button (click)="deleteFromWish(productId)">remove</button>
 </div>
+<button *ngIf="wishitems && wishitems.length > 0" (click)="clearwish()">
+    Clear 
+</button>

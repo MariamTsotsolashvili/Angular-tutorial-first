@@ -8,13 +8,17 @@ import { Wishservice } from '../wish.service';
 })
 export class WishlistComponent implements OnInit {
 
-  wishitems;
+  wishitems = [];
   constructor(private wishservice: Wishservice) {
     this.wishitems = this.wishservice.getwish();
    }
 
   ngOnInit() {}
-  RemoveFromwishlist(productId) {
-    this.wishservice.RemoveFromWishlist(productId);
+  deleteFromWish(productId) {
+    this.wishservice.deleteFromWish(productId);
   }
+  clearwish() {
+    this.wishservice.clearwish();
+    this.wishitems = this.wishservice.getwish();
+}
 }

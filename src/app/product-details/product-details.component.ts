@@ -33,4 +33,11 @@ export class ProductDetailsComponent implements OnInit {
         window.alert('Your product has been added!');
         this.wishservice.addToWish(product);
     }
+    existance(product) {
+        return this.wishitems.includes(product);
+    }
+    deleteFromWish(productId) {
+        window.alert('Your product has been removed!');
+        this.wishservice.deleteFromWish(productId);
+    }
 }
