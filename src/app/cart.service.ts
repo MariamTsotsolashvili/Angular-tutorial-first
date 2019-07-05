@@ -20,4 +20,7 @@ export class CartService {
         this.items = [];
         return this.items;
     }
+    RemoveFromCart(productId) {
+        this.items.splice(productId, 1);
+    }
 }
