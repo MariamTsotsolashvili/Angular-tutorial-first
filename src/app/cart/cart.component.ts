@@ -33,7 +33,7 @@ export class CartComponent implements OnInit {
     }
 
     static isCityOk(city) {
-        return city.charAt(0).toLowerCase() === 'a';
+        return city.charAt(0).toLowerCase() !== 'a';
     }
 
     ngOnInit() { }
