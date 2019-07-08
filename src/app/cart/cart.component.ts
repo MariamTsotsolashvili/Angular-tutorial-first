@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
     forbiddenName() {
         return (formControl) => {
             return formControl.value === 'Roman' ? {forbidden: {invalid: true}} : null;
-        }
+        };
     }
     RemoveFromCart(productId) {
         this.cartService.RemoveFromCart(productId);

@@ -1,0 +1,18 @@
+<form [formGroup]="checked" (ngSubmit)= "onSubmit(checked.value)">
+    <div>
+        <label for="E-mail">E-mail:</label>
+        <input type="text" id ="E-mail" formControlName = "E-mail" required>
+        <label for="Password">Password:</label>
+        <input type="text" id ="Password" formControlName = "Password" required>
+        <label for="Confirm Password">Confirm Password:</label>
+        <input type="text" id ="Confirm Password" formControlName = "Confirm Password" required>
+        <label for="Nickname">Nickname:</label>
+        <input type="text" id ="Nickname" formControlName = "Nickname" required>
+        <label for="Phone Number">Phone Number:</label>
+        <input type="text" id ="Phone Number" formControlName = "Phone Number" required>
+        <label for="Website">Website:</label>
+        <input type="text" id ="Website" formControlName = "Website" required>
+        <input type="checkbox" name="check" value="boxd"> I have read the agreement
+    </div>
+    <button class="button" type="button" (click)="resetForm()">Submit</button>
+</form>
