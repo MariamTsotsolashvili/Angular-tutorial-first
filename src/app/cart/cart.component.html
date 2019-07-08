@@ -54,6 +54,17 @@
 </div>
 <div>
     <h3>Errors</h3>
+    {{address.value}}
+    {{address.invalid}}
+    <div *ngIf="address.invalid && (address.dirty || address.touched)">
+        <div *ngIf="!address.errors.citystatus">
+            City can't start with 'A'.
+        </div>
+    </div>
+    <div *ngIf="address.value">
+
+    </div>
+
     <div *ngIf="name.invalid && (name.dirty || name.touched)">
         <div *ngIf="name.errors.required">
             name is required ! 
