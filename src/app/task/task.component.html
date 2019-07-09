@@ -1,18 +1,50 @@
-<form [formGroup]="checked" (ngSubmit)= "onSubmit(checked.value)">
+<form [formGroup]="checked" >
     <div>
-        <label for="E-mail">E-mail:</label>
-        <input type="text" id ="E-mail" formControlName = "E-mail" required>
+        <label for="mail">E-mail:</label>
+        <input type="text" id ="mail" formControlName = "mail" required>
         <label for="Password">Password:</label>
         <input type="text" id ="Password" formControlName = "Password" required>
-        <label for="Confirm Password">Confirm Password:</label>
-        <input type="text" id ="Confirm Password" formControlName = "Confirm Password" required>
+        <label for="ConfirmPassword">Confirm Password:</label>
+        <input type="text" id ="ConfirmPassword" formControlName ="ConfirmPassword" required>
         <label for="Nickname">Nickname:</label>
-        <input type="text" id ="Nickname" formControlName = "Nickname" required>
-        <label for="Phone Number">Phone Number:</label>
-        <input type="text" id ="Phone Number" formControlName = "Phone Number" required>
+        <input type="text" id ="Nickname" formControlName ="Nickname" required>
+        <label for="PhoneNumber">Phone Number:</label>
+        <input type="text" id ="PhoneNumber" formControlName ="PhoneNumber" required>
         <label for="Website">Website:</label>
-        <input type="text" id ="Website" formControlName = "Website" required>
-        <input type="checkbox" name="check" value="boxd"> I have read the agreement
+        <input type="text" id ="Website" formControlName = "Website" placeholder="website" required>
     </div>
-    <button class="button" type="button" (click)="resetForm()">Submit</button>
+    <input type="checkbox" name="check" value="box"> I have read the <a href="#"> agreement</a>
+    <div>
+        <button class="button" type="button">Register</button>
+    </div>
 </form>
+<div>
+    <h3>Customer</h3>
+    <p>
+        E-mail: {{checked.controls.mail.value}}
+    </p>
+    <p>
+        Password: {{checked.controls.Password.value}}
+    </p>
+    <p>
+        Confirm Password: {{checked.controls.ConfirmPassword.value}}
+    </p>
+    <p>
+        Nickname: {{checked.controls.Nickname.value}}
+    </p>
+    <p>
+        Phone Number: {{checked.controls.PhoneNumber.value}}
+    </p>
+    <p>
+        Website: {{checked.controls.Website.value}}
+    </p>
+    <p>
+        Form errors: {{checked.controls.Password.errors | json}}
+    </p>
+</div>
+
+<div>
+    <h3>Errors</h3>
+    <div *ngIf="checked.controls['mail'].invalid">Wrong email format</div>
+    <div *ngIf="checked.controls.errors?.invalid">wrong pass</div>
+</div>

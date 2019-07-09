@@ -10,18 +10,18 @@ export class TaskComponent implements OnInit {
   checked;
   constructor(private formBuilder: FormBuilder) {
     this.checked = formBuilder.group({
-      name: ['', [Validators.minLength(2)]],
+      mail: ['', [Validators.email]],
       Password: ['', [Validators.minLength(7)]],
-      mail: ['', this.email()],
-  });
+      ConfirmPassword: [''],
+      Nickname: [''],
+      PhoneNumber: [''],
+      Website: ['']
+  }, {validator: this.checkPasswords});
   }
 
   ngOnInit() { }
 
-  email() {
-    return(formControl) => {
-      return formControl.value.contains('@') ? {emailchecker: {invalid: false}} : null ;
-    };
-  }
-
+  checkPasswords(pass) {
+  return pass.get('Password') !== pass.get('ConfirmPassword').value ? null : { notSame: true };
+}
 }

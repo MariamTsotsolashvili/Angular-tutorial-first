@@ -36,7 +36,8 @@ import { TaskComponent } from './task/task.component';
       { path: 'products/:productId', component: ProductDetailsComponent},
       { path: 'cart', component: CartComponent},
       { path: 'shipping', component: ShippingComponent},
-      {path: 'wishlist', component: WishlistComponent}
+      {path: 'wishlist', component: WishlistComponent},
+      {path: 'task', component: TaskComponent}
     ]),
     ReactiveFormsModule
   ],
