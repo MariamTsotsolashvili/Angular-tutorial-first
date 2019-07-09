@@ -26,11 +26,9 @@ export class CurrencyService {
       }, i * 500);
 
       i++;
-
-      next(item);
     }
     setTimeout(() => {
-    complete(keys.length);
-    });
+      complete(keys.length);
+    }, i * 500);
   }
 }
