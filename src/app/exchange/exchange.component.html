@@ -1,0 +1,23 @@
+<p>exchange works!</p>
+<h1>Exchange</h1>
+<form [formGroup]="exchangeForm">
+    <div class="container">
+        <div class="dropdown first">
+            <button>{{from}}</button>
+            <div class="dropdown-child first-child">
+                <a *ngFor="let currency of currencies" (click)="setFrom(currency)">{{currency}}</a>
+            </div>
+        </div>
+        <input type="number" formControlName="input" value="{{getInput()}}">
+    </div>
+    <div class="container">
+        <div  class="dropdown second">
+            <button>{{to}}</button>
+            <div class="dropdown-child second-child">
+                <a *ngFor="let currency of currencies" (click)="setTo(currency)">{{currency}}</a>
+            </div>
+        </div>
+        <input formControlName="output" type="number" value="{{getOutput()}}">
+    </div>
+</form>
+<div *ngIf="exchangeForm.status !== 'VALID'"><h3>Wrong</h3></div>

@@ -1,0 +1,31 @@
+form {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    
+    .container {
+        display: flex;
+    }
+
+    input {
+        margin-left: 10px;
+        font-size: 20px;
+    }
+    .dropdown-child {
+        display: none;
+        width: 100%;
+    }
+    .dropdown-child a {
+        color: black;
+        text-decoration: none;
+        display: block;
+    }
+    .first:hover .first-child {
+        display: block;
+    }
+    
+    .second:hover .second-child {
+        display: block;
+    }
+    
+}
