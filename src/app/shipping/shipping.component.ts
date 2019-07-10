@@ -11,11 +11,20 @@ export class ShippingComponent implements OnInit {
 
   shippingCosts;
 
+
   constructor(private shippingservice: ShippingService) {
     this.shippingCosts = shippingservice.getShippingCosts();
    }
 
   ngOnInit() {
+  }
+
+  get selectedShipping() {
+    return this.shippingservice.getType();
+  }
+
+  selectShipping(value) {
+    this.shippingservice.setShipping(value);
   }
 
 }
