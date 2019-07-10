@@ -39,7 +39,7 @@ export class CartComponent implements OnInit {
     ngOnInit() { }
 
     crossValidation(formGroup) {
-        const zip = formGroup.get('zip').value;
+        const zip = formGroup.get('zipcode').value;
         const zipStatus = CartComponent.isZipOk(zip);
 
         const city = formGroup.get('city').value;
