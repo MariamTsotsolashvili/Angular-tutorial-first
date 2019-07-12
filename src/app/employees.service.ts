@@ -11,20 +11,25 @@ interface IEmployee {
  providedIn: 'root'
 })
 export class EmployeesService {
-
- constructor(private http: HttpClient) { }
- getEmployees() {
-   return this.http
-   .get('http://dummy.restapiexample.com/api/v1/employees')
-   .pipe(map((employees: IEmployee[]) => {
-     return employees.map(employee => {
-       return {
-         id: employee.id,
-         name: employee.employee_name,
-         salary: employee.employee_salary,
-         age: employee.employee_age
-       };
-     });
-   }));
- }
+  host = 'http://dummy.restapiexample.com/api/v1';
+  constructor(private http: HttpClient) { }
+  getEmployees() {
+    return this.http
+    .get(`${this.host}/employees`)
+    .pipe(map((employees: IEmployee[]) => {
+      return employees.map(employee => {
+        return {
+          id: employee.id,
+          name: employee.employee_name,
+          salary: employee.employee_salary,
+          age: employee.employee_age
+        };
+      });
+    }));
+  }
+  addToEmployes(employee: IEmployee) {
+    return this.http
+    .post(`${this.host}/create`, employee)
+    .subscribe();
+  }
 }

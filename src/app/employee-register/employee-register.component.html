@@ -1,0 +1,19 @@
+<h1>Employee-Register</h1>
+
+<form [formGroup]="employeeregister">
+   <div>
+       <label for="name">*name:</label>
+       <input id="name" type="text" formControlName="name" required>
+   </div>
+   <div>
+       <label for="salary">*salary :</label>
+       <input id="salary" type="number" formControlName="salary" required>
+   </div>
+   <div>
+        <label for="age">*age :</label>
+        <input id="age" type="number" formControlName="age" required>
+    </div>
+   <button [disabled]="employeeregister.status !== 'VALID'" class="button" (click)="sendInfo()">
+        Submit
+    </button>
+</form>
