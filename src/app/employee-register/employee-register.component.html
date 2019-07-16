@@ -18,7 +18,7 @@
     </button>
 </form>
 
-<div class="popUp" [@openClose]="visible ? 'show': 'hide'" *ngIf="popCheck">
+<div class="popUp" [@showHide]="visible ? 'show': 'hide'" *ngIf="popCheck">
     <h3>Are you sure?</h3>
     <button (click)="sendInfo()">Yes</button>
     <button (click)="popUp()">Not Really</button>
