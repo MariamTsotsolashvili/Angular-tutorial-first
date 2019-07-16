@@ -10,6 +10,7 @@ import { EmployeesService } from '../employees.service';
 })
 export class EmployeeRegisterComponent implements OnInit {
   employeeregister;
+  popCheck = false;
   constructor(private formBuilder: FormBuilder, private employeesService: EmployeesService ) {
     this.employeeregister = formBuilder.group( {
       name: [''],
@@ -21,5 +22,8 @@ export class EmployeeRegisterComponent implements OnInit {
   ngOnInit() {}
   sendInfo() {
     this.employeesService.addToEmployes(this.employeeregister.value);
+  }
+  popUp() {
+    this.popCheck = !this.popCheck;
   }
 }

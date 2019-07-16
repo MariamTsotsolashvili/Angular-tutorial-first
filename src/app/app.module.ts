@@ -53,7 +53,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsComponent,
     EmployeesComponent,
     EmployeeRegisterComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     HttpClientModule,
